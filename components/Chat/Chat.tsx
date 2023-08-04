@@ -482,9 +482,9 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 {loading && <ChatLoader />}
   
                 <div
-                  className="h-[400px] bg-gradient-to-br from-[#0A1128] to-[#142850]"
-                  ref={messagesEndRef}
-                />
+                className="h-[162px] bg-transparent"
+                ref={messagesEndRef}
+              />
               </>
             )}
           </div>
