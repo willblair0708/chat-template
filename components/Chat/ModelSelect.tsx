@@ -51,6 +51,7 @@ export const ModelSelect = () => {
               {model.id === defaultModelId
                 ? `Default (${model.name})`
                 : model.name}
+
             </option>
           ))}
         </select>

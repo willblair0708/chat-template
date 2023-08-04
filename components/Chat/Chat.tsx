@@ -439,30 +439,48 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               </>
             ) : (
               <>
-                <div className="sticky top-0 z-10 flex justify-center border border-b-neutral-300 bg-gradient-to-r from-[#132545] to-[#1B2C4D] py-2 text-sm text-blue-100 dark:border-none dark:bg-gradient-to-r dark:from-[#132545] dark:to-[#1B2C4D] dark:text-white">
-                  {t('Model')}: {selectedConversation?.model.name} | {t('Temp')}
-                  : {selectedConversation?.temperature} |
-                  <button
-                    className="ml-2 cursor-pointer hover:opacity-50 transition-all duration-500 hover:text-[#00909e]"
-                    onClick={handleSettings}
-                  >
-                    <IconSettings size={18} />
-                  </button>
-                  <button
-                    className="ml-2 cursor-pointer hover:opacity-50 transition-all duration-500 hover:text-[#00909e]"
-                    onClick={onClearAll}
-                  >
-                    <IconClearAll size={18} />
-                  </button>
+                <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#1B2C4D] to-[#132545] text-white shadow-md">
+                  <div className="flex items-center space-x-4">
+                    <span 
+                      className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-100 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
+                      onClick={handleSettings}
+                    >
+                      {t('Model')}: {selectedConversation?.model.name}
+                    </span>
+                    <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-110 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
+                      {t('Temp')}: {selectedConversation?.temperature}
+                    </span>
+                  </div>
+                  <div className="flex space-x-2">
+                    <button
+                      className="p-1 rounded hover:bg-[#00909e] shadow-md hover:shadow-xl transition duration-300"
+                      onClick={handleSettings}
+                    >
+                      <IconSettings size={20} className="transition duration-300 transform hover:rotate-180" />
+                    </button>
+                    <button
+                      className="p-1 rounded hover:bg-[#00909e] shadow-md hover:shadow-xl transition duration-300"
+                      onClick={onClearAll}
+                    >
+                      <IconClearAll size={20} className="transition duration-300 transform hover:rotate-180" />
+                    </button>
+                  </div>
                 </div>
                 {showSettings && (
-                  <div className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl">
+                <div 
+                  className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+                  onClick={() => setShowSettings(false)}
+                >
+                  <div 
+                    className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
                     <div className="flex h-full flex-col space-y-4 border-b border-white/20 p-4 dark:border-neutral-600 md:rounded-lg md:border shadow-lg backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
                       <ModelSelect />
                     </div>
                   </div>
+                </div>
                 )}
-  
                 {selectedConversation?.messages.map((message, index) => (
                   <MemoizedChatMessage
                     key={index}
