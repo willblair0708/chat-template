@@ -355,14 +355,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             Welcome to Curio AI
           </div>
           <div className="text-center text-lg">
-            <div className="mb-8">{`Chatbot UI is an open source clone of OpenAI's ChatGPT UI.`}</div>
+            <div className="mb-8">{`Curio AI is trained as an intelligent copilot for your entire database.`}</div>
             <div className="mb-2 font-bold">
-              The Copilot for Data
+              The Copilot for Databases
             </div>
           </div>
           <div className="text-center text-gray-300">
             <div className="mb-2">
-              Chatbot UI allows you to plug in your API key to use this UI with
+              Plug in your API key to use this UI with
               their API.
             </div>
             <div className="mb-2">
