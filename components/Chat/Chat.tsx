@@ -402,7 +402,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   <div className="text-center text-3xl font-semibold">
                     {models.length === 0 ? (
                       <div>
-                        <Spinner size="16px" className="mx-auto" />
+                        <Spinner size="16px" className="mx-auto " />
                       </div>
                     ) : (
                       'Curio'
@@ -410,7 +410,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   </div>
   
                   {models.length > 0 && (
-                    <div className="flex h-full flex-col space-y-4 rounded-lg border border-white/20 p-4 shadow-lg backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
+                    <div className="flex h-full flex-col space-y-4 rounded-lg p-4 shadow-2xl backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
                       <ModelSelect />
   
                       <SystemPrompt

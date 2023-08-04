@@ -24,12 +24,6 @@ export const ModelSelect = () => {
       });
   };
 
-  // Adding Framer Motion hover animation
-  const hoverAnimation = {
-    scale: 1.1,
-    transition: { duration: 0.1 },
-  };
-
   return (
     <div className="flex flex-col">
       <label className="mb-2 text-left text-neutral-700 dark:text-neutral-400">
@@ -65,7 +59,6 @@ export const ModelSelect = () => {
           href="https://platform.openai.com/account/usage"
           target="_blank"
           className="flex items-center"
-          whileHover={hoverAnimation} // Hover animation
         >
           <IconExternalLink size={18} className={'inline mr-1'} />
           {t('View Account Usage')}

@@ -1,5 +1,4 @@
 import { FC, useContext, useState } from 'react';
-
 import { useTranslation } from 'next-i18next';
 
 import { DEFAULT_TEMPERATURE } from '@/utils/app/const';
@@ -43,7 +42,11 @@ export const TemperatureSlider: FC<Props> = ({
         {temperature.toFixed(1)}
       </span>
       <input
-        className="cursor-pointer"
+        className="cursor-pointer appearance-none h-2 w-full bg-gray-200 rounded-full outline-none transition duration-500 ease-in-out hover:bg-gray-300 focus:bg-gray-400"
+        style={{ 
+          background: 'linear-gradient(to right, #00909e 0%, #00909e ' + (temperature * 100) + '%, #d3d3d3 ' + (temperature * 100) + '%, #d3d3d3 100%)',
+          WebkitAppearance: 'none'
+        }}
         type="range"
         min={0}
         max={1}
@@ -51,6 +54,27 @@ export const TemperatureSlider: FC<Props> = ({
         value={temperature}
         onChange={handleChange}
       />
+      <style jsx>{`
+        input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #00909e;
+          cursor: pointer;
+          transition: background 0.3s ease-in-out;
+        }
+        input[type='range']::-moz-range-thumb {
+          width: 20px;
+          height: 20px;
+          border: 0;
+          background: #00909e;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background 0.3s ease-in-out;
+        }
+      `}</style>
       <ul className="w mt-2 pb-8 flex justify-between px-[24px] text-neutral-900 dark:text-neutral-100">
         <li className="flex justify-center">
           <span className="absolute">{t('Precise')}</span>
