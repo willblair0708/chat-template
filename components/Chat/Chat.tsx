@@ -467,19 +467,19 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                   </div>
                 </div>
                 {showSettings && (
+              <div 
+                className="z-10 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+                onClick={() => setShowSettings(false)}
+              >
                 <div 
-                  className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-                  onClick={() => setShowSettings(false)}
+                  className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <div 
-                    className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="flex h-full flex-col space-y-4 border-b border-white/20 p-4 dark:border-neutral-600 md:rounded-lg md:border shadow-lg backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
-                      <ModelSelect />
-                    </div>
+                  <div className="flex h-full flex-col space-y-4 border-b border-white/20 p-4 dark:border-neutral-600 md:rounded-lg md:border shadow-lg backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
+                    <ModelSelect />
                   </div>
                 </div>
+              </div>
                 )}
                 {selectedConversation?.messages.map((message, index) => (
                   <MemoizedChatMessage
