@@ -281,7 +281,7 @@ export const ChatInput = ({
   
         <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md border border-white/20 bg-[#0A1128] shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:bg-[#142850] dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4">
           <button
-            className="absolute left-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-2"
+            className="absolute left-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
             onClick={() => setShowPluginSelect(!showPluginSelect)}
             onKeyDown={(e) => {}}
           >
@@ -312,7 +312,7 @@ export const ChatInput = ({
           )}
           <textarea
             ref={textareaRef}
-            className="m-0 w-full resize-none border-0 bg-transparent p-0 py-3 pr-8 pl-10 text-black dark:border dark:border-white dark:bg-transparent dark:text-white md:py-2.8 md:pl-10 rounded-lg shadow-lg"
+            className="m-0 mt-[-3px] w-full resize-none border-0 bg-transparent p-0 py-3 pr-8 pl-10 text-black dark:border dark:border-white dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 rounded-lg shadow-lg"
             style={{
               resize: 'none',
               bottom: `${textareaRef?.current?.scrollHeight}px`,
@@ -335,13 +335,13 @@ export const ChatInput = ({
           />
 
           <button
-            className="absolute right-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-2"
+            className="absolute right-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
             onClick={handleSend}
           >
             {messageIsStreaming ? (
               <div className="h-4 w-4 animate-spin rounded-full border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
             ) : (
-              <IconMessage size={18} />
+              <IconMessage size={20} />
             )}
           </button>
 
