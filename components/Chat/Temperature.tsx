@@ -44,7 +44,7 @@ export const TemperatureSlider: FC<Props> = ({
       <input
         className="cursor-pointer appearance-none h-2 w-full bg-gray-200 rounded-full outline-none transition duration-500 ease-in-out hover:bg-gray-300 focus:bg-gray-400"
         style={{ 
-          background: 'linear-gradient(to right, #00909e 0%, #00909e ' + (temperature * 100) + '%, #d3d3d3 ' + (temperature * 100) + '%, #d3d3d3 100%)',
+          background: 'linear-gradient(to right, #0A1128 0%, #00909e',
           WebkitAppearance: 'none'
         }}
         type="range"
@@ -69,7 +69,7 @@ export const TemperatureSlider: FC<Props> = ({
           width: 20px;
           height: 20px;
           border: 0;
-          background: #00909e;
+          background: #0A1128;
           border-radius: 50%;
           cursor: pointer;
           transition: background 0.3s ease-in-out;
