@@ -2,7 +2,6 @@ import { FC, useContext, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import { DEFAULT_TEMPERATURE } from '@/utils/app/const';
-
 import HomeContext from '@/pages/api/home/home.context';
 
 interface Props {
@@ -29,20 +28,20 @@ export const TemperatureSlider: FC<Props> = ({
   };
 
   return (
-    <div className="flex flex-col">
-      <label className="mb-2 text-left text-neutral-700 dark:text-neutral-400">
+    <div className="flex flex-col space-y-3">
+      <label className="mb-2 text-left text-lg font-semibold text-neutral-900 dark:text-neutral-300">
         {label}
       </label>
-      <span className="text-[12px] text-black/50 dark:text-white/50 text-sm">
+      <span className="text-sm text-neutral-700 dark:text-neutral-400">
         {t(
           'Higher values will cause more random responses, while lower values like will make the response more focused and deterministic.',
         )}
       </span>
-      <span className="mt-2 mb-1 text-center text-neutral-900 dark:text-neutral-100">
+      <div className="text-center text-xl font-bold text-neutral-900 dark:text-neutral-100">
         {temperature.toFixed(1)}
-      </span>
+      </div>
       <input
-        className="cursor-pointer appearance-none h-2 w-full bg-gray-200 rounded-full outline-none transition duration-500 ease-in-out hover:bg-gray-300 focus:bg-gray-400"
+        className="cursor-pointer appearance-none h-2.5 w-full rounded-full outline-none transition duration-500 ease-in-out hover:bg-[#1B2C4D] focus:bg-[#142850]"
         style={{ 
           background: 'linear-gradient(to right, #0A1128 0%, #00909e',
           WebkitAppearance: 'none'
@@ -63,29 +62,25 @@ export const TemperatureSlider: FC<Props> = ({
           border-radius: 50%;
           background: #00909e;
           cursor: pointer;
-          transition: background 0.3s ease-in-out;
+          transition: background 0.3s;
+        }
+        input[type='range']::-webkit-slider-thumb:hover,
+        input[type='range']::-webkit-slider-thumb:active {
+          background: #007b8a;
         }
         input[type='range']::-moz-range-thumb {
           width: 20px;
           height: 20px;
-          border: 0;
-          background: #0A1128;
           border-radius: 50%;
+          background: #00909e;
           cursor: pointer;
-          transition: background 0.3s ease-in-out;
+          transition: background 0.3s;
+        }
+        input[type='range']::-moz-range-thumb:hover,
+        input[type='range']::-moz-range-thumb:active {
+          background: #007b8a;
         }
       `}</style>
-      <ul className="w mt-2 pb-8 flex justify-between px-[24px] text-neutral-900 dark:text-neutral-100">
-        <li className="flex justify-center">
-          <span className="absolute">{t('Precise')}</span>
-        </li>
-        <li className="flex justify-center">
-          <span className="absolute">{t('Neutral')}</span>
-        </li>
-        <li className="flex justify-center">
-          <span className="absolute">{t('Creative')}</span>
-        </li>
-      </ul>
     </div>
-  );
+);
 };

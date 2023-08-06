@@ -10,8 +10,6 @@ import {
 } from 'react';
 import toast from 'react-hot-toast';
 
-import { motion } from 'framer-motion'; 
-
 import { useTranslation } from 'next-i18next';
 
 import { getEndpoint } from '@/utils/app/api';
@@ -409,7 +407,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     </div>
 
                     {models.length > 0 && (
-                        <div className="flex h-full flex-col space-y-5 rounded-xl p-6 shadow-2xl backdrop-filter backdrop-blur-md bg-[#ffffff08] border border-[#142850] transition-transform transform hover:scale-105">
+                        <div className="flex h-full flex-col space-y-5 rounded-xl p-6 shadow-2xl backdrop-filter backdrop-blur-md bg-[#ffffff08] border border-[#142850] transition-transform transform">
                             <ModelSelect className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-sm hover:shadow-md transition-shadow"/>
                             
                             <TemperatureSlider
@@ -429,13 +427,13 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#0A1128] to-[#142850] text-white shadow-lg">
                   <div className="flex items-center space-x-4">
                       <span 
-                          className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-105 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
+                          className="text-mg font-semibold transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
                           title="Change Model"  // Simple Tooltip
                           onClick={handleSettings}
                       >
                           {t('Model')}: {selectedConversation?.model.name}
                       </span>
-                      <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-105 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
+                      <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
                           {t('Temp')}: {selectedConversation?.temperature}
                       </span>
                   </div>
