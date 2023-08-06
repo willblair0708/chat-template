@@ -408,7 +408,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
 
                     {models.length > 0 && (
                         <div className="flex h-full flex-col space-y-5 rounded-xl p-6 shadow-2xl backdrop-filter backdrop-blur-md bg-[#ffffff08] border border-[#142850] transition-transform transform">
-                            <ModelSelect className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-sm hover:shadow-md transition-shadow"/>
+                            <ModelSelect className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-md hover:shadow-lg transition-shadow"/>
                             
                             <TemperatureSlider
                                 label={t('Temperature')}
@@ -418,7 +418,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                                         value: temperature,
                                     })
                                 }
-                                className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-sm hover:shadow-md transition-shadow"
+                                className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-md hover:shadow-lg transition-shadow"
                             />
                         </div>
                     )}
