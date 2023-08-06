@@ -7,9 +7,10 @@ import HomeContext from '@/pages/api/home/home.context';
 interface Props {
   label: string;
   onChangeTemperature: (temperature: number) => void;
+  className?: string; // Added className to the Props
 }
 
-export const TemperatureSlider: FC<Props> = ({ label, onChangeTemperature }) => {
+export const TemperatureSlider: FC<Props> = ({ label, onChangeTemperature, className }) => {
   const { state: { conversations } } = useContext(HomeContext);
   const lastConversation = conversations[conversations.length - 1];
   const [temperature, setTemperature] = useState(
@@ -25,7 +26,7 @@ export const TemperatureSlider: FC<Props> = ({ label, onChangeTemperature }) => 
   };
 
   return (
-    <div className="flex flex-col space-y-4 p-4 rounded-lg shadow-lg bg-white dark:bg-[#172949]">
+    <div className={`flex flex-col space-y-4 p-4 shadow-lg bg-white dark:bg-[#172949] ${className || ''}`}> {/* Using the className */}
       {/* Label */}
       <label className="text-2xl font-bold text-neutral-900 dark:text-neutral-300">
         {label}

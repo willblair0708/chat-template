@@ -418,6 +418,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                                         value: temperature,
                                     })
                                 }
+                                className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-sm hover:shadow-md transition-shadow"
                             />
                         </div>
                     )}
