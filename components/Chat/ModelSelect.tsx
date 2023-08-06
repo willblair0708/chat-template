@@ -30,10 +30,10 @@ export const ModelSelect: React.FC<ModelSelectProps> = ({ className }) => {
 
   return (
     <div className={`flex flex-col ${className}`}> {/* Applied className here */}
-      <label className="mb-2 text-left text-neutral-700 dark:text-neutral-400">
+      <label className="text-2xl font-bold text-neutral-900 dark:text-neutral-300">
         {t('Model')}
       </label>
-      <div className="relative w-full rounded-lg bg-gradient-to-r from-[#1B2C4D] to-[#132545] text-neutral-900 dark:text-white shadow-md hover:shadow-lg transition-shadow">
+      <div className="relative w-full rounded-lg bg-gradient-to-r from-[#1B2C4D] to-[#132545] text-neutral-700 dark:text-neutral-400 shadow-md hover:shadow-lg transition-shadow">
       <select
           className="w-full bg-transparent p-3 appearance-none outline-none"
           placeholder={t('Select a model') || ''}
