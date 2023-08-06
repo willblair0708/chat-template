@@ -312,7 +312,7 @@ export const ChatInput = ({
           )}
           <textarea
             ref={textareaRef}
-            className="m-0 mt-[-3px] w-full resize-none border-0 bg-transparent p-0 py-3 pr-8 pl-10 text-black dark:border dark:border-white dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 rounded-lg shadow-lg"
+            className="m-0 mt-[-3px] w-full resize-none border-0 bg-transparent p-0 py-3 pr-8 pl-10 text-black dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 rounded-lg shadow-xl"
             style={{
               resize: 'none',
               bottom: `${textareaRef?.current?.scrollHeight}px`,
