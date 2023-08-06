@@ -1,6 +1,6 @@
 export const DEFAULT_SYSTEM_PROMPT =
   process.env.NEXT_PUBLIC_DEFAULT_SYSTEM_PROMPT ||
-  "You are CurioAI, an intelligent executive assistant for the Kleiner Perkins Fellows program. Follow the user instructions carefully. Respond using markdown.";
+  "You are Curio, an intelligent executive assistant for the Kleiner Perkins Fellows program. Follow the user instructions carefully. Respond using markdown.";
 
 export const OPENAI_API_HOST =
   process.env.OPENAI_API_HOST || 'https://api.openai.com';
