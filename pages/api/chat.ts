@@ -1,5 +1,7 @@
 import { DEFAULT_SYSTEM_PROMPT, DEFAULT_TEMPERATURE } from '@/utils/app/const';
 import { OpenAIError, OpenAIStream } from '@/utils/server';
+import { getContext, Metadata } from '@/utils/pinecone/context';
+import { ScoredVector } from "@pinecone-database/pinecone";
 
 import { ChatBody, Message } from '@/types/chat';
 
@@ -33,6 +35,21 @@ const handler = async (req: Request): Promise<Response> => {
     if (temperatureToUse == null) {
       temperatureToUse = DEFAULT_TEMPERATURE;
     }
+
+    // Get the last user message
+    const lastUserMessage = messages[messages.length - 1];
+
+    // Get context from Pinecone
+    const context = await getContext(lastUserMessage.content, 'KPFellows4', 10000, 0.7, false) as ScoredVector[];
+
+    // Prepare context for OpenAI
+    let openaiContext = '';
+    context.forEach((scoredVector: ScoredVector) => {
+      const metadata = scoredVector.metadata as Metadata;
+      openaiContext += '\n' + metadata.chunk;
+    });
+
+    promptToSend += openaiContext; // append the context to the prompt
 
     const prompt_tokens = encoding.encode(promptToSend);
 

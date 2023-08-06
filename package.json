@@ -45,7 +45,7 @@
     "@types/react-transition-group": "^4.4.6",
     "@vercel/analytics": "^1.0.1",
     "@vercel/og": "^0.5.7",
-    "ai": "^2.1.16",
+    "ai": "^2.1.32",
     "cheerio": "^1.0.0-rc.12",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
