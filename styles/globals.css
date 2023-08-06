@@ -7,20 +7,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #000000;
+  background-color: #1C2541;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #2C3E50;
+  background-color: #465881;
 }
 
 ::-webkit-scrollbar-track:hover {
-  background-color: #000000;
+  background-color: #1C2541;
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: #000000;
+  background-color: #0A1128;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +29,7 @@
 }
 
 html {
-  background: linear-gradient(to right, #2C3E50, #000000);
+  background: #0A1128;
 }
 
 @media (max-width: 720px) {
