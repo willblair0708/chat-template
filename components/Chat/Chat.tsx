@@ -413,17 +413,6 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     <div className="flex h-full flex-col space-y-4 rounded-lg p-4 shadow-2xl backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
                       <ModelSelect />
   
-                      <SystemPrompt
-                        conversation={selectedConversation}
-                        prompts={prompts}
-                        onChangePrompt={(prompt) =>
-                          handleUpdateConversation(selectedConversation, {
-                            key: 'prompt',
-                            value: prompt,
-                          })
-                        }
-                      />
-  
                       <TemperatureSlider
                         label={t('Temperature')}
                         onChangeTemperature={(temperature) =>
