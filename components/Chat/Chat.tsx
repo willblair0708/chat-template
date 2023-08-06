@@ -10,6 +10,8 @@ import {
 } from 'react';
 import toast from 'react-hot-toast';
 
+import { motion } from 'framer-motion'; 
+
 import { useTranslation } from 'next-i18next';
 
 import { getEndpoint } from '@/utils/app/api';
@@ -395,66 +397,65 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
             className="max-h-full overflow-x-hidden"
             ref={chatContainerRef}
             onScroll={handleScroll}
-          >
+        >
             {selectedConversation?.messages.length === 0 ? (
-              <>
-                <div className="mx-auto flex flex-col space-y-5 md:space-y-[-1] px-3 pt-5 md:pt-12 sm:max-w-[600px]">
-                  <div className="text-center text-3xl font-semibold">
-                    {models.length === 0 ? (
-                      <div>
-                        <Spinner size="0px" className="mx-auto " />
-                      </div>
-                    ) : (
-                      ''
-                    )}
-                  </div>
-  
-                  {models.length > 0 && (
-                    <div className="flex h-full flex-col space-y-4 rounded-lg p-4 shadow-2xl backdrop-filter backdrop-blur-lg bg-[#ffffff08]">
-                      <ModelSelect />
-  
-                      <TemperatureSlider
-                        label={t('Temperature')}
-                        onChangeTemperature={(temperature) =>
-                          handleUpdateConversation(selectedConversation, {
-                            key: 'temperature',
-                            value: temperature,
-                          })
-                        }
-                      />
+                <div className="mx-auto flex flex-col space-y-5 md:space-y-2 px-5 pt-8 md:pt-14 sm:max-w-[620px]">
+                    <div className="text-center text-4xl font-bold text-[#00909e]">
+                        {models.length === 0 && (
+                            <div className="p-4 rounded-full bg-[#00909e]">
+                                <Spinner size="30px" className="mx-auto text-white" />
+                            </div>
+                        )}
                     </div>
-                  )}
+
+                    {models.length > 0 && (
+                        <div className="flex h-full flex-col space-y-5 rounded-xl p-6 shadow-2xl backdrop-filter backdrop-blur-md bg-[#ffffff08] border border-[#142850] transition-transform transform hover:scale-105">
+                            <ModelSelect className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-sm hover:shadow-md transition-shadow"/>
+                            
+                            <TemperatureSlider
+                                label={t('Temperature')}
+                                onChangeTemperature={(temperature) =>
+                                    handleUpdateConversation(selectedConversation, {
+                                        key: 'temperature',
+                                        value: temperature,
+                                    })
+                                }
+                            />
+                        </div>
+                    )}
                 </div>
-              </>
             ) : (
               <>
-                <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#1B2C4D] to-[#132545] text-white shadow-md">
+                <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#0A1128] to-[#142850] text-white shadow-lg">
                   <div className="flex items-center space-x-4">
-                    <span 
-                      className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-100 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
-                      onClick={handleSettings}
-                    >
-                      {t('Model')}: {selectedConversation?.model.name}
-                    </span>
-                    <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-110 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
-                      {t('Temp')}: {selectedConversation?.temperature}
-                    </span>
+                      <span 
+                          className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-105 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
+                          title="Change Model"  // Simple Tooltip
+                          onClick={handleSettings}
+                      >
+                          {t('Model')}: {selectedConversation?.model.name}
+                      </span>
+                      <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform hover:scale-105 shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
+                          {t('Temp')}: {selectedConversation?.temperature}
+                      </span>
                   </div>
                   <div className="flex space-x-2">
-                    <button
-                      className="p-1 rounded hover:bg-[#00909e] shadow-md hover:shadow-xl transition duration-300"
-                      onClick={handleSettings}
-                    >
-                      <IconSettings size={20} className="transition duration-300 transform hover:rotate-180" />
-                    </button>
-                    <button
-                      className="p-1 rounded hover:bg-[#00909e] shadow-md hover:shadow-xl transition duration-300"
-                      onClick={onClearAll}
-                    >
-                      <IconClearAll size={20} className="transition duration-300 transform hover:rotate-180" />
-                    </button>
+                      <button
+                          title="Settings"  // Simple Tooltip
+                          className="p-1 rounded hover:bg-[#00909e] shadow-lg hover:shadow-xl transition duration-300"
+                          onClick={handleSettings}
+                      >
+                          <IconSettings size={20} className="transition duration-300 transform hover:rotate-180" />
+                      </button>
+                      <button
+                          title="Clear All Messages"  // Simple Tooltip
+                          className="p-1 rounded hover:bg-[#00909e] shadow-lg hover:shadow-xl transition duration-300"
+                          onClick={onClearAll}
+                      >
+                          <IconClearAll size={20} className="transition duration-300 transform hover:rotate-180" />
+                      </button>
                   </div>
-                </div>
+              </div>
                 {showSettings && (
               <div 
                 className="z-10 fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
@@ -471,21 +472,20 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               </div>
                 )}
                 {selectedConversation?.messages.map((message, index) => (
-                  <MemoizedChatMessage
+                    <MemoizedChatMessage
                     key={index}
                     message={message}
                     messageIndex={index}
                     onEdit={(editedMessage) => {
-                      setCurrentMessage(editedMessage);
-                      // discard edited message and the ones that come after then resend
-                      handleSend(
-                        editedMessage,
-                        selectedConversation?.messages.length - index,
-                      );
+                        setCurrentMessage(editedMessage);
+                        handleSend(
+                            editedMessage,
+                            selectedConversation?.messages.length - index,
+                        );
                     }}
-                  />
+                />
                 ))}
-  
+                  
                 {loading && <ChatLoader />}
   
                 <div
@@ -495,22 +495,21 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
               </>
             )}
           </div>
-  
           <ChatInput
             stopConversationRef={stopConversationRef}
             textareaRef={textareaRef}
             onSend={(message, plugin) => {
-              setCurrentMessage(message);
-              handleSend(message, 0, plugin);
+                setCurrentMessage(message);
+                handleSend(message, 0, plugin);
             }}
             onScrollDownClick={handleScrollDown}
             onRegenerate={() => {
-              if (currentMessage) {
-                handleSend(currentMessage, 2, null);
-              }
+                if (currentMessage) {
+                    handleSend(currentMessage, 2, null);
+                }
             }}
             showScrollDownButton={showScrollDownButton}
-          />
+        />
         </>
       )}
     </div>
