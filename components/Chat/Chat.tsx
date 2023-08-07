@@ -429,13 +429,13 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#485563] to-[#29323c] text-white shadow-lg">
                   <div className="flex items-center space-x-4">
                       <span 
-                          className="text-mg font-semibold transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
+                          className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
                           title="Change Model"  // Simple Tooltip
                           onClick={handleSettings}
                       >
                           {t('Model')}: {selectedConversation?.model.name}
                       </span>
-                      <span className="text-mg font-semibold transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
+                      <span className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
                           {t('Temp')}: {selectedConversation?.temperature}
                       </span>
                   </div>
