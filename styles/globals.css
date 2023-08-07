@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: #0A1128;
+  background-color: #485563;
 }
 
 ::-webkit-scrollbar {
@@ -29,7 +29,7 @@
 }
 
 html {
-  background: #0A1128;
+  background: #485563;
 }
 
 @media (max-width: 720px) {

@@ -348,7 +348,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
   }, [messagesEndRef]);
 
   return (
-    <div className="relative flex-1 overflow-hidden bg-gradient-to-br from-[#0A1128] to-[#142850] text-white">
+    <div className="relative flex-1 overflow-hidden bg-gradient-to-br from-[#485563] to-[#29323c] text-white">
       {!(apiKey || serverSideApiKeyIsSet) ? (
         <div className="mx-auto flex h-full w-[300px] flex-col justify-center space-y-6 sm:w-[600px]">
           <div className="text-center text-4xl font-bold">
@@ -407,8 +407,9 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     </div>
 
                     {models.length > 0 && (
-                        <div className="flex h-full flex-col space-y-5 rounded-xl p-6 shadow-2xl backdrop-filter backdrop-blur-md bg-[#ffffff08] transition-transform transform">
-                            <ModelSelect className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-md hover:shadow-lg transition-shadow"/>
+                        <div className="flex flex-col h-full p-6 space-y-5 border-2 border-transparent rounded-xl shadow-md backdrop-filter backdrop-blur-sm bg-opacity-5 bg-white transition-transform duration-300 ease-in hover:bg-opacity-10 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1">
+
+                            <ModelSelect className="rounded-md bg-gradient-to-r from-[#485563] to-[#29323c] p-2 shadow-md hover:shadow-xl transition-shadow"/>
                             
                             <TemperatureSlider
                                 label={t('Temperature')}
@@ -418,14 +419,14 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                                         value: temperature,
                                     })
                                 }
-                                className="rounded-md bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-2 shadow-md hover:shadow-lg transition-shadow"
+                                className="rounded-md bg-gradient-to-r from-[#485563] to-[#29323c] p-2 shadow-md hover:shadow-xl transition-shadow"
                             />
                         </div>
                     )}
                 </div>
             ) : (
               <>
-                <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#0A1128] to-[#142850] text-white shadow-lg">
+                <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#485563] to-[#29323c] text-white shadow-lg">
                   <div className="flex items-center space-x-4">
                       <span 
                           className="text-mg font-semibold transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"

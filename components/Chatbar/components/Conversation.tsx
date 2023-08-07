@@ -103,7 +103,7 @@ export const ConversationComponent = ({ conversation }: Props) => {
   return (
     <div className="relative flex items-center">
       {isRenaming && selectedConversation?.id === conversation.id ? (
-        <div className="flex w-full items-center gap-3 rounded-lg bg-[#0A1128] p-3 transition-all duration-200 ease-in-out">
+        <div className="flex w-full items-center gap-3 rounded-lg bg-[#485563] p-3 transition-all duration-200 ease-in-out">
           <IconMessage size={18} className="text-white hover:animate-pulse" />
           <input
             className="mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 text-white outline-none focus:border-neutral-100"
@@ -116,7 +116,7 @@ export const ConversationComponent = ({ conversation }: Props) => {
         </div>
       ) : (
         <button
-          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 ease-in-out hover:bg-[#0A1128] ${
+          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 ease-in-out hover:bg-[#485563] ${
             messageIsStreaming ? 'disabled:cursor-not-allowed' : ''
           } ${
             selectedConversation?.id === conversation.id

@@ -47,7 +47,7 @@ const Sidebar = <T,>({
   };
 
   const highlightDrop = (e: any) => {
-    e.target.style.background = '#0A1128';
+    e.target.style.background = '#485563';
   };
 
   const removeHighlight = (e: any) => {
@@ -57,7 +57,7 @@ const Sidebar = <T,>({
   return isOpen ? (
     <div>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[265px] flex-none flex-col space-y-4 bg-gradient-to-r from-[#1B2C4D] to-[#132545] p-4 text-[14px] transition-all duration-500 ease-in-out sm:relative sm:top-0 shadow-xl`}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[265px] flex-none flex-col space-y-4 bg-gradient-to-r from-[#485563] to-[#29323c] p-4 text-[14px] transition-all duration-500 ease-in-out sm:relative sm:top-0 shadow-xl`}
       >
         <div className="flex items-center justify-between mb-4">
           <button

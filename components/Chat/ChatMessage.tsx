@@ -127,7 +127,7 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
     <div
       className={`group md:px-4 transition-colors duration-200 ease-in-out ${
         message.role === 'assistant'
-        ? 'bg-[#D0E1F9] text-[#27496d] shadow-lg transition-transform transform hover:shadow-xl rounded-md dark:bg-[#142850] dark:text-[#80ccff] dark:shadow-xl' // For AI
+        ? 'bg-[#D0E1F9] text-[#27496d] shadow-lg transition-transform transform hover:shadow-xl rounded-md dark:bg-[#29323c] dark:text-[#80ccff] dark:shadow-xl' // For AI
         : 'bg-[#E0EEFF] text-[#1A3D70] shadow-lg transition-transform transform hover:shadow-xl rounded-md dark:bg-[#0A1C33] dark:text-[#60AADD] dark:shadow-xl' // For User  
       }`}
       style={{ overflowWrap: 'anywhere', scrollbarWidth: 'thin', scrollbarColor: '#999 #eee' }}
@@ -148,7 +148,7 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
                 <div className="flex w-full flex-col">
                   <textarea
                     ref={textareaRef}
-                    className="w-full resize-none whitespace-pre-wrap border-none bg-[#142850] text-[#80ccff]"
+                    className="w-full resize-none whitespace-pre-wrap border-none bg-[#29323c] text-[#80ccff]"
                     value={messageContent}
                     onChange={handleInputChange}
                     onKeyDown={handlePressEnter}
@@ -173,7 +173,7 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
                       {t('Save & Submit')}
                     </button>
                     <button
-                      className="h-[40px] rounded-md border border-[#27496d] px-4 py-1 text-sm font-medium text-[#80ccff] hover:bg-[#142850]"
+                      className="h-[40px] rounded-md border border-[#27496d] px-4 py-1 text-sm font-medium text-[#80ccff] hover:bg-[#29323c]"
                       onClick={() => {
                         setMessageContent(message.content);
                         setIsEditing(false);
