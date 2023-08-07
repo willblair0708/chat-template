@@ -275,7 +275,7 @@ export const ChatInput = ({
               className="rounded-lg bg-background absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 py-2 px-4 border border-gray-400 text-white hover:opacity-70 dark:text-white md:mb-0 md:mt-2"
               onClick={onRegenerate}
             >
-              <IconRepeat size={16} /> {t('Regenerate response')}
+              <IconRepeat size={16} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse"/> {t('Regenerate response')}
             </button>
           )}
   
@@ -381,16 +381,16 @@ export const ChatInput = ({
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-[12px] text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
         <a
-          href="https://github.com/Curio-IRM"
+          href="https://github.com/willblair0708/kpfellows-chat"
           target="_blank"
           rel="noreferrer"
           className="underline"
         >
-          Curio
+          KP Chat
         </a>
         .{' '}
         {t(
-          "Curio AI is an advanced copilot for user databases.",
+          "KP Chat is an advanced copilot for the Kleiner Perkins Fellowship.",
         )}
       </div>
     </div>

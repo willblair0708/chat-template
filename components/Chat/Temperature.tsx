@@ -34,7 +34,7 @@ export const TemperatureSlider: FC<Props> = ({ label, onChangeTemperature, class
       
       {/* Slider Info */}
       <span className="text-base text-neutral-700 dark:text-neutral-400">
-        {t('Higher values will cause more random responses, while lower values like will make the response more focused and deterministic.')}
+        {t('Higher values will cause more random responses, while lower values will make the response more focused and deterministic.')}
       </span>
       
       {/* Temperature Value */}
