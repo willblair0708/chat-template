@@ -257,7 +257,7 @@ export const ChatInput = ({
   }, []);
 
   return (
-    <div className="absolute bottom-0 left-0 w-full border-transparent bg-gradient-to-br from-[#485563] to-[#29323c] pt-6 dark:from-[#485563] dark:to-[#29323c] md:pt-2">
+    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-br from-[#485563] to-[#29323c] pt-6 dark:from-[#485563] dark:to-[#29323c] md:pt-2">
       <div className="stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
         {messageIsStreaming && (
           <button
@@ -272,24 +272,25 @@ export const ChatInput = ({
           selectedConversation &&
           selectedConversation.messages.length > 0 && (
             <button
-              className="absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 rounded bg-[#485563] py-2 px-4 text-white hover:opacity-70 dark:bg-[#29323c] dark:text-white md:mb-0 md:mt-2"
+              className="rounded-lg bg-background absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 py-2 px-4 border border-gray-400 text-white hover:opacity-70 dark:text-white md:mb-0 md:mt-2"
               onClick={onRegenerate}
             >
               <IconRepeat size={16} /> {t('Regenerate response')}
             </button>
           )}
   
-        <div className="relative mx-2 flex w-full flex-grow flex-col rounded-md bg-[#485563] shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-gray-900/50 dark:text-white dark:shadow-md hover:shadow-xl transition-shadow sm:mx-4">
+         <div className="bg-background relative mx-2 bg-transparent flex w-full flex-grow flex-col">
+
           <button
-            className="absolute left-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
+            className="absolute left-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:text-neutral-900 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
             onClick={() => setShowPluginSelect(!showPluginSelect)}
             onKeyDown={(e) => {}}
           >
-            {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} />}
+            {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse" />}
           </button>
   
           {showPluginSelect && (
-            <div className="absolute left-0 bottom-14 rounded bg-[#485563] dark:bg-[#29323c]">
+            <div className="bg-transparent absolute left-0 bottom-14 rounded bg-[#485563] dark:bg-[#29323c]">
               <PluginSelect
                 plugin={plugin}
                 onKeyDown={(e: any) => {
@@ -312,7 +313,7 @@ export const ChatInput = ({
           )}
           <textarea
             ref={textareaRef}
-            className="m-0 mt-[-3px] w-full resize-none border-0 bg-transparent p-0 py-3 pr-8 pl-10 text-black dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 rounded-lg shadow-xl"
+            className="bg-transparent rounded-2xl m-0 mt-[-3px] w-full resize-none p-0 py-3 pr-8 pl-10 text-black dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 shadow-md hover:shadow-xl"
             style={{
               resize: 'none',
               bottom: `${textareaRef?.current?.scrollHeight}px`,
@@ -335,13 +336,13 @@ export const ChatInput = ({
           />
 
           <button
-            className="absolute right-2 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
+            className="absolute right-2 top-2 rounded-md p-1 text-neutral-800 opacity-60 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200 py-1"
             onClick={handleSend}
           >
             {messageIsStreaming ? (
               <div className="h-4 w-4 animate-spin rounded-full border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
             ) : (
-              <IconMessage size={20} />
+              <IconMessage size={20} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse"/>
             )}
           </button>
 

@@ -407,7 +407,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     </div>
 
                     {models.length > 0 && (
-                        <div className="flex flex-col h-full p-6 space-y-5 border-2 border-transparent rounded-xl shadow-md backdrop-filter backdrop-blur-sm bg-opacity-5 bg-white transition-transform duration-300 ease-in hover:bg-opacity-10 hover:border-blue-400 hover:shadow-xl hover:-translate-y-1">
+                        <div className="flex flex-col h-full p-6 space-y-5 border-1 border-transparent rounded-xl shadow-md backdrop-filter backdrop-blur-sm bg-opacity-5 bg-white transition-transform duration-300 ease-in hover:bg-opacity-10 hover:border-[#00909e] hover:shadow-xl hover:-translate-y-1">
 
                             <ModelSelect className="rounded-md bg-gradient-to-r from-[#485563] to-[#29323c] p-2 shadow-md hover:shadow-xl transition-shadow"/>
                             

@@ -67,7 +67,7 @@ const Sidebar = <T,>({
               handleSearchTerm('');
             }}
           >
-            <IconPlus size={16} className="transition-all duration-500 hover:text-[#00909e]" />
+            <IconPlus size={16} className="transition-all duration-500 hover:text-[#485563]" />
             {addItemButtonTitle}
           </button>
 
@@ -75,7 +75,7 @@ const Sidebar = <T,>({
             className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-lg border border-white/20 p-3 text-sm text-white transform transition-transform duration-500 hover:scale-105 hover:bg-[#00909e] shadow-lg hover:shadow-xl"
             onClick={handleCreateFolder}
           >
-            <IconFolderPlus size={16} className="transition-all duration-500 hover:text-[#00909e]" />
+            <IconFolderPlus size={16} className="transition-all duration-500 hover:text-[#485563]" />
           </button>
         </div>
 
