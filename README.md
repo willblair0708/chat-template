@@ -19,7 +19,29 @@ PINECONE_ENVIRONMENT=''
 PINECONE_INDEX=''
 ```
 
-**3. Run App**
+## 3. Change Namespace**
+
+Change the namespace in these files to the appropriate name.
+
+In utils/server/context.ts
+
+```bash
+const context = await getContext(lastMessage.content, 'KPFellows4', 10000, 0.7, false) as ScoredVector[]
+```
+```bash
+const context = await getContext(lastMessage.content, 'YOUR_NAMESPACE', 10000, 0.7, false) as ScoredVector[]
+```
+
+And in pages/api
+
+```bash
+const context = await getContext(lastUserMessage.content, 'KPFellows4', 10000, 0.7, false) as ScoredVector[];
+```
+```bash
+const context = await getContext(lastUserMessage.content, 'YOUR_NAMESPACE', 10000, 0.7, false) as ScoredVector[];
+```
+
+**4. Run App**
 
 ```bash
 yarn dev
