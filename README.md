@@ -6,9 +6,9 @@
 yarn install
 ```
 
-**2. Provide OpenAI API Key**
+**2. Provide Keys**
 
-Create a .env.local file in the root of the repo with your OpenAI API Key:
+Create a .env file in the root of the repo with your OpenAI API Key:
 
 ```bash
 OPENAI_API_KEY=YOUR_KEY
