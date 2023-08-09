@@ -1,4 +1,4 @@
-# Curio Chatbot
+# Chatbot
 
 **1. Install Dependencies**
 
