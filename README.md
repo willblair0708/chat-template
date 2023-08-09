@@ -11,7 +11,7 @@ yarn install
 Find the .env file in the root of the repo. Add the following variables
 
 ```bash
-OPENAI_API_KEY=YOUR_KEY
+OPENAI_API_KEY=''
 PINECONE_API_KEY=''
 PINECONE_ENVIRONMENT=''
 
