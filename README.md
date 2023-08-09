@@ -8,7 +8,7 @@ yarn install
 
 **2. Provide Keys**
 
-Find the .env file in the root of the repo. Add the following variables
+Find the .env file in the root of the repo. Keep the existing variables and add the following values
 
 ```bash
 OPENAI_API_KEY=''
