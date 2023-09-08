@@ -381,16 +381,16 @@ export const ChatInput = ({
       </div>
       <div className="px-3 pt-2 pb-3 text-center text-[12px] text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
         <a
-          href="https://github.com/willblair0708/kpfellows-chat"
+          href="https://www.mybiogenesis.com/"
           target="_blank"
           rel="noreferrer"
           className="underline"
         >
-          KP Chat
+          Biogenesis Chat
         </a>
         .{' '}
         {t(
-          "KP Chat is an advanced copilot for the Kleiner Perkins Fellowship.",
+          "Biogenesis is an advanced copilot for clinical trials.",
         )}
       </div>
     </div>

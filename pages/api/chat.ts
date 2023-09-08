@@ -40,7 +40,7 @@ const handler = async (req: Request): Promise<Response> => {
     const lastUserMessage = messages[messages.length - 1];
 
     // Get context from Pinecone
-    const context = await getContext(lastUserMessage.content, 'KPFellows4', 10000, 0.7, false) as ScoredVector[];
+    const context = await getContext(lastUserMessage.content, '', 10000, 0.7, false) as ScoredVector[];
 
     // Prepare context for OpenAI
     let openaiContext = '';

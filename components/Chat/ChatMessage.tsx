@@ -2,12 +2,11 @@ import {
   IconCheck,
   IconCopy,
   IconEdit,
-  IconRobot,
   IconTrash,
   IconUser,
 } from '@tabler/icons-react';
 
-import IconKP from '@/public/kp';
+import IconBiogenesis from '@/public/biogenesis';
 
 import { FC, memo, useContext, useEffect, useRef, useState } from 'react';
 
@@ -138,7 +137,7 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
       <div className="relative m-auto flex p-4 text-base md:max-w-2xl md:gap-6 md:py-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl">
         <div className="min-w-[40px] text-right font-bold">
           {message.role === 'assistant' ? (
-            <IconKP size={25} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse" />
+            <IconBiogenesis size={25} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse" />
           ) : (
             <IconUser size={30} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse transform -translate-x-1"/>
           )}
