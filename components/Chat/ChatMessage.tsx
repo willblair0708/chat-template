@@ -129,8 +129,8 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
     <div
       className={`group md:px-4 transition-colors duration-200 ease-in-out ${
         message.role === 'assistant'
-        ? 'bg-[#bdc3c7] text-[#234A6D] shadow-lg transition-transform transform hover:shadow-xl rounded-md dark:bg-[#485563] dark:text-[#6FB5E0] dark:shadow-xl' // For AI
-        : 'bg-[#D9ECFF] text-[#17385B] shadow-lg transition-transform transform hover:shadow-xl rounded-md dark:bg-[#29323c] dark:text-[#50A0CD] dark:shadow-xl' // For User            
+        ? 'bg-[#18181A] text-[#234A6D] dark:bg-[#18181A] dark:text-[#6FB5E0] border-b-2 border-[#27272A] mx-auto w-3/4' // For AI
+        : 'bg-[#18181A] text-[#17385B] dark:bg-[#18181A] dark:text-[#50A0CD] border-b-2 border-[#27272A] mx-auto w-3/4' // For User
       }`}
       style={{ overflowWrap: 'anywhere', scrollbarWidth: 'thin', scrollbarColor: '#999 #eee' }}
     >

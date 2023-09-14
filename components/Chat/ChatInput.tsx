@@ -257,11 +257,11 @@ export const ChatInput = ({
   }, []);
 
   return (
-    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-br from-[#485563] to-[#29323c] pt-6 dark:from-[#485563] dark:to-[#29323c] md:pt-2">
+    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-br from-[#18181A] to-[#18181A] pt-6 dark:from-[#18181A] dark:to-[#18181A] md:pt-2">
       <div className="stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
         {messageIsStreaming && (
           <button
-            className="absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 bg-[#485563] py-2 px-4 text-white hover:opacity-70 dark:bg-[#29323c] dark:text-white md:mb-0 md:mt-2"
+            className="absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 bg-[#18181A] py-2 px-4 text-white hover:opacity-70 dark:bg-[#18181A] dark:text-white md:mb-0 md:mt-2"
             onClick={handleStopConversation}
           >
             <IconPlayerStop size={16} /> {t('Stop Generating')}
@@ -313,7 +313,7 @@ export const ChatInput = ({
           )}
           <textarea
             ref={textareaRef}
-            className="bg-transparent rounded-2xl m-0 mt-[-3px] w-full resize-none p-0 py-3 pr-8 pl-10 text-black dark:bg-transparent dark:text-white md:py-1.8 md:pl-10 shadow-md hover:shadow-xl"
+            className="bg-[#09090B] rounded-2xl m-0 mt-[-3px] w-full resize-none p-0 py-3 pr-8 pl-10 text-black dark:bg-[#09090B] dark:text-white md:py-1.8 md:pl-10 shadow-md hover:shadow-xl"
             style={{
               resize: 'none',
               bottom: `${textareaRef?.current?.scrollHeight}px`,

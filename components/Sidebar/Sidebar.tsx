@@ -57,7 +57,7 @@ const Sidebar = <T,>({
   return isOpen ? (
     <div>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[265px] flex-none flex-col space-y-4 bg-gradient-to-r from-[#485563] to-[#29323c] p-4 text-[14px] transition-all duration-500 ease-in-out sm:relative sm:top-0 shadow-xl`}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[265px] flex-none flex-col space-y-4 bg-gradient-to-r from-[#09090B] to-[#09090B] p-4 text-[14px] transition-all duration-500 ease-in-out sm:relative sm:top-0 shadow-xl border-2 border-[#27272A]`}
       >
         <div className="flex items-center justify-between mb-4">
           <button
