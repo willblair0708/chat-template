@@ -61,7 +61,7 @@ const Sidebar = <T,>({
       >
         <div className="flex items-center justify-between mb-4">
           <button
-            className="flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-lg border border-white/20 p-3 text-white transform transition-transform duration-500 hover:scale-105 hover:bg-[#00909e] shadow-lg hover:shadow-xl"
+            className="flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-lg border border-white/20 p-3 text-white transform transition-transform duration-500 hover:scale-105 hover:bg-[#485663] shadow-lg hover:shadow-xl"
             onClick={() => {
               handleCreateItem();
               handleSearchTerm('');
@@ -72,7 +72,7 @@ const Sidebar = <T,>({
           </button>
 
           <button
-            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-lg border border-white/20 p-3 text-sm text-white transform transition-transform duration-500 hover:scale-105 hover:bg-[#00909e] shadow-lg hover:shadow-xl"
+            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-lg border border-white/20 p-3 text-sm text-white transform transition-transform duration-500 hover:scale-105 hover:bg-[#485663] shadow-lg hover:shadow-xl"
             onClick={handleCreateFolder}
           >
             <IconFolderPlus size={16} className="transition-all duration-500 hover:text-[#485563]" />
@@ -82,7 +82,7 @@ const Sidebar = <T,>({
         <div className="relative rounded-lg shadow-lg mb-4">
           <IconSearch size={16} className="absolute top-1/2 left-3 transform -translate-y-1/2 text-white" />
           <input
-            className="bg-transparent pl-10 pr-4 py-2 rounded-lg w-full text-white placeholder-white/60 focus:outline-none"
+            className="bg-[#18181A] pl-10 pr-4 py-2 rounded-full w-full text-white placeholder-white/60 focus:outline-none shadow-lg border border-[#27272A] transition-all duration-500 ease-in-out hover:border-[#27272A] focus:border-[#27272A]"
             placeholder={t('Search...') || ''}
             value={searchTerm}
             onChange={(e) => handleSearchTerm(e.target.value)}

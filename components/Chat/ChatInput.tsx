@@ -275,7 +275,7 @@ export const ChatInput = ({
               className="rounded-lg bg-background absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 py-2 px-4 border border-gray-400 text-white hover:opacity-70 dark:text-white md:mb-0 md:mt-2"
               onClick={onRegenerate}
             >
-              <IconRepeat size={16} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse"/> {t('Regenerate response')}
+              <IconRepeat size={16} className="transition-all duration-500 hover:text-[#485663] hover:animate-pulse"/> {t('Regenerate response')}
             </button>
           )}
   
@@ -286,7 +286,7 @@ export const ChatInput = ({
             onClick={() => setShowPluginSelect(!showPluginSelect)}
             onKeyDown={(e) => {}}
           >
-            {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse" />}
+            {plugin ? <IconBrandGoogle size={20} /> : <IconBolt size={20} className="transition-all duration-500 hover:text-[#485663] hover:animate-pulse" />}
           </button>
   
           {showPluginSelect && (
@@ -342,7 +342,7 @@ export const ChatInput = ({
             {messageIsStreaming ? (
               <div className="h-4 w-4 animate-spin rounded-full border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
             ) : (
-              <IconMessage size={20} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse"/>
+              <IconMessage size={20} className="transition-all duration-500 hover:text-[#485663] hover:animate-pulse"/>
             )}
           </button>
 

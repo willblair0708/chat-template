@@ -61,7 +61,7 @@ export const ModelSelect: React.FC<ModelSelectProps> = ({ className }) => {
         <motion.a
           href="https://platform.openai.com/account/usage"
           target="_blank"
-          className="flex items-center hover:text-[#00909e] transition-colors"
+          className="flex items-center hover:text-[#485663] transition-colors"
         >
           <IconExternalLink size={18} className={'inline mr-1'} />
           {t('View Account Usage')}

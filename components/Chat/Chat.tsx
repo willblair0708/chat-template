@@ -380,7 +380,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 href="https://platform.openai.com/account/api-keys"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#00909e] hover:underline"
+                className="text-[#485663] hover:underline"
               >
                 openai.com
               </a>
@@ -398,7 +398,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
         >
             {selectedConversation?.messages.length === 0 ? (
                 <div className="mx-auto flex flex-col space-y-5 md:space-y-2 px-5 pt-8 md:pt-14 sm:max-w-[620px]">
-                    <div className="text-center text-4xl font-bold text-[#00909e]">
+                    <div className="text-center text-4xl font-bold text-[#485663]">
                         {models.length === 0 && (
                             <div className="p-4 rounded-full">
                                 <Spinner size="30px" className="mx-auto text-white" />
@@ -407,7 +407,7 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                     </div>
 
                     {models.length > 0 && (
-                        <div className="flex flex-col h-full p-6 space-y-5 border-1 border-transparent rounded-xl shadow-md backdrop-filter backdrop-blur-sm bg-opacity-5 bg-white transition-transform duration-300 ease-in hover:bg-opacity-10 hover:border-[#00909e] hover:shadow-xl hover:-translate-y-1">
+                        <div className="flex flex-col h-full p-6 space-y-5 border-1 border-transparent rounded-xl shadow-md backdrop-filter backdrop-blur-sm bg-opacity-5 bg-white transition-transform duration-300 ease-in hover:bg-opacity-10 hover:border-[#485663] hover:shadow-xl hover:-translate-y-1">
 
                             <ModelSelect className="rounded-md bg-gradient-to-r from-[#000000] to-[#434343] p-2 shadow-md hover:shadow-xl transition-shadow"/>
                             
@@ -429,27 +429,27 @@ export const Chat = memo(({ stopConversationRef }: Props) => {
                 <div className="sticky top-0 z-10 flex justify-between items-center px-10 py-2 bg-gradient-to-r from-[#000000] to-[#09090B] text-white shadow-lg">
                   <div className="flex items-center space-x-4">
                       <span 
-                          className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]"
+                          className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#485663]"
                           title="Change Model"  // Simple Tooltip
                           onClick={handleSettings}
                       >
                           {t('Model')}: {selectedConversation?.model.name}
                       </span>
-                      <span className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#00909e]">
+                      <span className="text-sm transition-all ease-in-out duration-500 transform shadow hover:shadow-lg p-1 rounded cursor-pointer hover:text-[#485663]">
                           {t('Temp')}: {selectedConversation?.temperature}
                       </span>
                   </div>
                   <div className="flex space-x-2">
                       <button
                           title="Settings"  // Simple Tooltip
-                          className="p-1 rounded hover:bg-[#00909e] shadow-lg hover:shadow-xl transition duration-300"
+                          className="p-1 rounded hover:bg-[#485663] shadow-lg hover:shadow-xl transition duration-300"
                           onClick={handleSettings}
                       >
                           <IconSettings size={20} className="transition duration-300 transform hover:rotate-180" />
                       </button>
                       <button
                           title="Clear All Messages"  // Simple Tooltip
-                          className="p-1 rounded hover:bg-[#00909e] shadow-lg hover:shadow-xl transition duration-300"
+                          className="p-1 rounded hover:bg-[#485663] shadow-lg hover:shadow-xl transition duration-300"
                           onClick={onClearAll}
                       >
                           <IconClearAll size={20} className="transition duration-300 transform hover:rotate-180" />

@@ -129,17 +129,17 @@ export const ChatMessage: FC<Props> = memo(({ message, messageIndex, onEdit }) =
     <div
       className={`group md:px-4 transition-colors duration-200 ease-in-out ${
         message.role === 'assistant'
-        ? 'bg-[#18181A] text-[#234A6D] dark:bg-[#18181A] dark:text-[#6FB5E0] border-b-2 border-[#27272A] mx-auto w-3/4' // For AI
-        : 'bg-[#18181A] text-[#17385B] dark:bg-[#18181A] dark:text-[#50A0CD] border-b-2 border-[#27272A] mx-auto w-3/4' // For User
+        ? 'bg-[#18181A] text-[#234A6D] dark:bg-[#18181A] dark:text-[#6FB5E0] border-b-2 border-[#27272A] mx-auto w-1/2' // For AI
+        : 'bg-[#18181A] text-[#17385B] dark:bg-[#18181A] dark:text-[#50A0CD] border-b-2 border-[#27272A] mx-auto w-1/2' // For User
       }`}
       style={{ overflowWrap: 'anywhere', scrollbarWidth: 'thin', scrollbarColor: '#999 #eee' }}
     >
       <div className="relative m-auto flex p-4 text-base md:max-w-2xl md:gap-6 md:py-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl">
         <div className="min-w-[40px] text-right font-bold">
           {message.role === 'assistant' ? (
-            <IconBiogenesis size={25} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse" />
+            <IconBiogenesis size={25} className="transition-all duration-500 hover:text-[#485663] hover:animate-pulse" />
           ) : (
-            <IconUser size={30} className="transition-all duration-500 hover:text-[#00909e] hover:animate-pulse transform -translate-x-1"/>
+            <IconUser size={30} className="transition-all duration-500 hover:text-[#485663] hover:animate-pulse transform -translate-x-1"/>
           )}
         </div>
 
